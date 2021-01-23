@@ -1,4 +1,5 @@
 const mix = require('laravel-mix');
+var elixir = require('laravel-elixir');
 
 /*
  |--------------------------------------------------------------------------
@@ -13,3 +14,9 @@ const mix = require('laravel-mix');
 
 mix.js('resources/js/app.js', 'public/js')
     .sass('resources/sass/app.scss', 'public/css');
+
+
+elixir(function (mix) {
+    mix.sass('main.scss')
+        .coffee('module.coffee');
+});
